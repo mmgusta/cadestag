@@ -1,0 +1,84 @@
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content>
+    <form 
+        [formGroup]="addForm"
+        (ngSubmit)="onSubmit()">
+
+        <mat-form-field style="visibility: hidden;">
+            <input matInput placeholder="Codigo" formControlName="id">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Nome" formControlName="nome">
+        </mat-form-field>
+      
+        <mat-form-field >
+          <textarea matInput placeholder="Pendencias" formControlName="pendencias"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Cliente" formControlName="cliente">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select formControlName="contratoOk" placeholder="Contrato Ok?">
+                <mat-option value="ok">Ok</mat-option>
+                <mat-option value="nok">NOk</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select formControlName="situacaoAtual" placeholder="Situacao Atual">
+                <mat-option *ngFor="let situacao of situacoes" [value]="situacao.id">{{ situacao.descricao }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput formControlName="dtAdmissao" [matDatepicker]="picker" placeholder="Data Admissao">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput formControlName="dtTerminoCurso" [matDatepicker]="picker2" placeholder="Data Termino Curso">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput formControlName="dtTerminoContrato" [matDatepicker]="picker3" placeholder="Data Termino Contrato">
+            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+            <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Recesso" formControlName="recesso">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput formControlName="dtDesligEfetivRenov" [matDatepicker]="picker4" placeholder="Desligamento/Efetivacao/Renovacao">
+            <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+            <mat-datepicker #picker4></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select formControlName="potencial" placeholder="Potencial">
+                <mat-option value="supera">Supera</mat-option>
+                <mat-option value="bom">Bom</mat-option>
+                <mat-option value="medio">Medio</mat-option>
+                <mat-option value="inferior">Inferior</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Particularidade" formControlName="particularidade">
+          </mat-form-field>
+        
+          <mat-form-field >
+            <textarea matInput placeholder="Obs" formControlName="obs" matAutosizeMinRows=5 matAutosizeMaxRows=20></textarea>
+          </mat-form-field>
+
+          <button mat-flat-button color="accent">Cadastrar</button>
+
+      </form>
+</div>

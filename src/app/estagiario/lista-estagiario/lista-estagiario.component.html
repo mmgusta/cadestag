@@ -1,0 +1,109 @@
+<mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtro">
+</mat-form-field>
+
+
+<div class="table-scroll">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="pendencias">
+            <th mat-header-cell *matHeaderCellDef> Pendencias </th>
+            <td mat-cell *matCellDef="let element"> {{element.pendencias}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="cliente">
+            <th mat-header-cell *matHeaderCellDef> Cliente </th>
+            <td mat-cell *matCellDef="let element"> {{element.cliente}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="contratoOk">
+            <th mat-header-cell *matHeaderCellDef> Contrato Ok </th>
+            <td mat-cell *matCellDef="let element"> {{element.contratoOk}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
+            <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="situacaoAtual">
+            <th mat-header-cell *matHeaderCellDef> Situacao Atual </th>
+            <td mat-cell *matCellDef="let element"> {{element.situacaoAtual.descricao}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="dtAdmissao">
+            <th mat-header-cell *matHeaderCellDef> Dt. Admissao </th>
+            <td mat-cell *matCellDef="let element"> {{element.dtAdmissao}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="dtTerminoCurso">
+            <th mat-header-cell *matHeaderCellDef> Dt. Termino Curso </th>
+            <td mat-cell *matCellDef="let element"> {{element.dtTerminoCurso}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="dtTerminoContrato">
+            <th mat-header-cell *matHeaderCellDef> Dt. Termino Contrato </th>
+            <td mat-cell *matCellDef="let element"> {{element.dtTerminoContrato}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="recesso">
+            <th mat-header-cell *matHeaderCellDef> Recesso </th>
+            <td mat-cell *matCellDef="let element"> {{element.recesso}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="dtDesligEfetivRenov">
+            <th mat-header-cell *matHeaderCellDef> Desligamento/Efetivacao/Renovacao </th>
+            <td mat-cell *matCellDef="let element"> {{element.dtDesligEfetivRenov}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="potencial">
+            <th mat-header-cell *matHeaderCellDef> Potencial </th>
+            <td mat-cell *matCellDef="let element"> {{element.potencial}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="particularidade">
+            <th mat-header-cell *matHeaderCellDef> Particularidade </th>
+            <td mat-cell *matCellDef="let element"> {{element.particularidade}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="obs">
+            <th mat-header-cell *matHeaderCellDef> Observacao </th>
+            <td mat-cell *matCellDef="let element"> {{element.obs}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="acoes" sticky>
+            <th mat-header-cell *matHeaderCellDef>
+
+                <button mat-icon-button color="primary" (click)="startAdd()">
+                    <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+                </button>
+            </th>
+            <td mat-cell *matCellDef="let element; let i=index;">
+              <button mat-icon-button color="accent" (click)="startEdit(i, element.id)">
+                <mat-icon aria-label="Edit">edit</mat-icon>
+              </button>
+      
+              <button mat-icon-button color="accent" (click)="deleteItem(element.id)">
+                <mat-icon aria-label="Delete">delete</mat-icon>
+              </button>
+            </td>
+        </ng-container>s
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

@@ -1,0 +1,33 @@
+{
+  
+  "situacaoAtual": [
+    {
+      "id": "1",
+      "descricao": "Estagiario"
+    },
+    {
+      "id": "2",
+      "descricao": "Junior"
+    },
+    {
+      "id": "3",
+      "descricao": "Futuro Contratado"
+    },
+    {
+      "id": "4",
+      "descricao": "Futuro Contratado Provisorio"
+    },
+    {
+      "id": "5",
+      "descricao": "Transferido"
+    },
+    {
+      "id": "6",
+      "descricao": "Contratado"
+    },
+    {
+      "id": "7",
+      "descricao": "Contratado Provisorio"
+    }
+  ]
+}
