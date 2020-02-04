@@ -6,7 +6,7 @@ import { MAT_DATE_FORMATS, DateAdapter, MAT_DATE_LOCALE } from '@angular/materia
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 import * as _moment from 'moment';
 
-import { Estagiario } from '../../estagiario';
+import { Estagiario } from '../../Estagiario';
 import { EstagiarioService } from '../../estagiario.service';
 import { SituacaoAtual } from '../../SituacaoAtual';
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Estagiario } from './estagiario';
+import { Estagiario } from './Estagiario';
 import { HttpClient } from '@angular/common/http';
 import { SituacaoAtual } from './SituacaoAtual';
 

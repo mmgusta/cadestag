@@ -7,7 +7,7 @@ import * as _moment from 'moment';
 
 import { EstagiarioService } from '../../estagiario.service';
 import { SituacaoAtual } from '../../SituacaoAtual';
-import { Estagiario } from '../../estagiario';
+import { Estagiario } from '../../Estagiario';
 import { MatDialogRef } from '@angular/material';
 
 const moment = _moment;

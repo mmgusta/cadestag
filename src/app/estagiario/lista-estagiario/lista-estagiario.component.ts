@@ -2,7 +2,7 @@ import { Component, OnInit, ɵConsole } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatDialog} from '@angular/material/dialog';
 
-import { Estagiario } from '../estagiario';
+import { Estagiario } from '../Estagiario';
 import { EstagiarioService } from '../estagiario.service';
 import { DialogEditEstagiarioComponent } from '../dialog/dialog-edit-estagiario/dialog-edit-estagiario.component';
 import { DialogAddEstagiarioComponent } from '../dialog/dialog-add-estagiario/dialog-add-estagiario.component';
