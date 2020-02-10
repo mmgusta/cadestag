@@ -28,7 +28,7 @@
         </mat-form-field>
 
         <mat-form-field>
-            <mat-select formControlName="situacaoAtual" placeholder="Situacao Atual">
+            <mat-select formControlName="situacaoAtual" placeholder="Situacao Atual" required> 
                 <mat-option *ngFor="let situacao of situacoes" [value]="situacao.id">{{ situacao.descricao }}</mat-option>
             </mat-select>
         </mat-form-field>

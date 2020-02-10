@@ -118,7 +118,7 @@ export class DialogEditEstagiarioComponent implements OnInit {
       pendencias:this.estagiario.pendencias,
       cliente:this.estagiario.cliente,
       contratoOk:this.estagiario.contratoOk,
-      situacaoAtual:this.estagiario.situacaoAtual,
+      situacaoAtual:this.estagiario.situacaoAtual.id,
       dtAdmissao:dtAdmissaoAux !== '' ? new Date(
                             Number(dtAdmissaoAux[2]),
                             Number(dtAdmissaoAux[1]) - 1,

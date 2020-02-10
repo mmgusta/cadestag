@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { MAT_DATE_FORMATS, DateAdapter, MAT_DATE_LOCALE } from '@angular/material';
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
@@ -56,7 +56,7 @@ export class DialogAddEstagiarioComponent implements OnInit {
       pendencias:'',
       cliente:'',
       contratoOk:'',
-      situacaoAtual:'',
+      situacaoAtual: ['', Validators.required],
       dtAdmissao: '',
       dtTerminoCurso: '',
       dtTerminoContrato: '',
@@ -74,18 +74,22 @@ export class DialogAddEstagiarioComponent implements OnInit {
   }
 
   onSubmit() {
-    this.estagiario = this.addForm.value;
+    if(!this.addForm.hasError) {
+      this.estagiario = this.addForm.value;
 
-    this.estagiario.dtAdmissao = this.datePipe.transform(this.estagiario.dtAdmissao, 'dd/MM/yyyy');
-    this.estagiario.dtTerminoContrato = this.datePipe.transform(this.estagiario.dtTerminoContrato, 'dd/MM/yyyy');
-    this.estagiario.dtTerminoCurso = this.datePipe.transform(this.estagiario.dtTerminoCurso, 'dd/MM/yyyy');
-    this.estagiario.dtDesligEfetivRenov = this.datePipe.transform(this.estagiario.dtDesligEfetivRenov, 'dd/MM/yyyy');
+      this.estagiario.dtAdmissao = this.datePipe.transform(this.estagiario.dtAdmissao, 'dd/MM/yyyy');
+      this.estagiario.dtTerminoContrato = this.datePipe.transform(this.estagiario.dtTerminoContrato, 'dd/MM/yyyy');
+      this.estagiario.dtTerminoCurso = this.datePipe.transform(this.estagiario.dtTerminoCurso, 'dd/MM/yyyy');
+      this.estagiario.dtDesligEfetivRenov = this.datePipe.transform(this.estagiario.dtDesligEfetivRenov, 'dd/MM/yyyy');
 
-    this.estagService.addEstagiario(this.estagiario).subscribe(
-      () => {
-        this.dialogRef.close(true);
-      }
-    );
+      this.estagService.addEstagiario(this.estagiario).subscribe(
+          () => {
+            this.dialogRef.close(true);
+          }
+      );
+
+    }
+    
 
   }
 
