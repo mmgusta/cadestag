@@ -6,9 +6,11 @@
     width: 100%;
 }
 
-/* .table-scroll{ 
+.table-scroll{ 
     overflow-x: scroll;
-} */
+    overflow-y: scroll;
+    height: 400px;
+}
 
   
   .mat-cell,

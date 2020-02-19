@@ -18,7 +18,7 @@ export class ListaEstagiarioComponent implements OnInit {
 
   estagiarios:Estagiario[] = [];
 
-  displayedColumns: string[] = ['pendencias', 'cliente', 'nome', 'situacaoAtual', 'dtAdmissao', 'dtTerminoCurso', 'dtTerminoContrato', 'acoes'];
+  displayedColumns: string[] = ['acoes','pendencias', 'cliente', 'nome', 'situacaoAtual', 'dtAdmissao', 'dtTerminoCurso', 'dtTerminoContrato', 'dtDesligEfetivRenov'];
   dataSource = new MatTableDataSource<Estagiario>();
 
   applyFilter(filterValue: string) {
